@@ -5,19 +5,21 @@ package com.example.android.miwok;
  * It contains a default translation and a Miwok translation for that word.
  */
 public class Word {
+    private static final int RESOURCE_NOT_PROVIDED = -1;
+
     private String mDefaultTranslation;
     private String mMiwokTranslation;
-    private int mImageResourceId = NO_IMAGE_PROVIDED;
+    private int mImageResourceId = RESOURCE_NOT_PROVIDED;
+    private int mAudioResourceId;
 
-    private static final int NO_IMAGE_PROVIDED = -1;
-
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         this.mDefaultTranslation = defaultTranslation;
         this.mMiwokTranslation = miwokTranslation;
+        this.mAudioResourceId = audioResourceId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
-        this(defaultTranslation, miwokTranslation);
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
+        this(defaultTranslation, miwokTranslation, audioResourceId);
         this.mImageResourceId = imageResourceId;
     }
 
@@ -40,6 +42,10 @@ public class Word {
     }
 
     public boolean hasImageId() {
-        return mImageResourceId != NO_IMAGE_PROVIDED;
+        return mImageResourceId != RESOURCE_NOT_PROVIDED;
+    }
+
+    public int getAudioResourceId() {
+        return mAudioResourceId;
     }
 }

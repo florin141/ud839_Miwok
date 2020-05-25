@@ -17,7 +17,8 @@
     <LinearLayout
         android:id="@+id/text_container"
         android:paddingLeft="16dp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         tools:background="@color/category_numbers"
         android:orientation="vertical" >
@@ -42,5 +43,11 @@
             android:textColor="@android:color/white"
             tools:text="one" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/color_dusty_yellow" />
 
 </LinearLayout>
